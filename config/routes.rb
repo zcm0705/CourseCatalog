@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :homes
+  
+  root 'users#new'
+
   resources :instructors
   resources :courses
   resources :subjects
