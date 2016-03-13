@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li><%= link_to "Home", homes_path %><li>
+    <li><%= link_to "Course", courses_path %><li>
+    <li><%= link_to "Subject", subjects_path %><li>
+    <li><%= link_to "Instructor", instructors_path %><li>
+    <li><%= link_to "Logout", root_path %><li>
+  </ul>
 
+<%= yield %>
+</div>
 </body>
 </html>
