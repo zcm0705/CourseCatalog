@@ -14,8 +14,14 @@
 ActiveRecord::Schema.define(version: 20160313210210) do
 
   create_table "courses", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "credit"
+    t.string   "name"
+    t.string   "requirement"
+    t.text     "description"
+    t.string   "c_id"
+    t.string   "code"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "homes", force: :cascade do |t|
@@ -24,11 +30,20 @@ ActiveRecord::Schema.define(version: 20160313210210) do
   end
 
   create_table "instructors", force: :cascade do |t|
+    t.string   "ins_id"
+    t.string   "first"
+    t.string   "middle"
+    t.string   "last"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "abb"
+    t.string   "sub_id"
+    t.text     "segments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

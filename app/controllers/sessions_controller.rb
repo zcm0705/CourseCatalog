@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user = User.find_by(name: params[:name])
       if user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to homes_path
+        redirect_to users_path
       else
         redirect_to login_url, alert: "Invalid password."
       end
