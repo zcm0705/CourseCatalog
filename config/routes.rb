@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :enrollments
+
+  # resources :searches
+
+  get 'searches/results', to: 'searches#show', as: 'search_show'
+  
+  get 'searches', to: 'searches#index'
+
   get 'admin' => 'admin#index'
   controller :sessions do
     get 'login' => :new
@@ -20,6 +28,7 @@ Rails.application.routes.draw do
   root 'users#new'
 
   resources :instructors
+
   resources :courses
   resources :subjects
   resources :users

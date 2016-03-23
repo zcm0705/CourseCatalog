@@ -26,7 +26,7 @@ subjects.each do |s|
 end
 
 courses.each do |c|
-  Course.create(name: c["name"], credit: c["credit"], requirement: c["requirement"], description: c["description"], c_id: c["id"], code: c["code"])
+  Course.create(name: c["name"], subjects: c["subjects"], credit: c["credit"], requirement: c["requirement"], description: c["description"], c_id: c["id"], code: c["code"])
 end
 
 instructors.each do |ins|
