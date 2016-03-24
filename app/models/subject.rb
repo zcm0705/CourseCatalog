@@ -1,8 +1,8 @@
 class Subject < ActiveRecord::Base
   has_many :courses
 
-  def self.search(search)
-    where("name LIKE ?",  "%#{search}%")
+  def get_subject_name
+    "#{name}"
   end
 
 end

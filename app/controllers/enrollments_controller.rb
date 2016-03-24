@@ -1,5 +1,6 @@
 class EnrollmentsController < ApplicationController
-  include CurrentEnrollment
+  include CurrentUser
+  before_action :set_user, only: [:create]
   before_action :set_enrollment, only: [:create]
   before_action :set_enrollment, only: [:show, :edit, :update, :destroy]
 
@@ -26,11 +27,12 @@ class EnrollmentsController < ApplicationController
   # POST /enrollments
   # POST /enrollments.json
   def create
-    @enrollment = Enrollment.new(enrollment_params)
+    course = Course.find(params[:course_id])
+    @enrollment = @user.enrollments.build(course: course)
 
     respond_to do |format|
       if @enrollment.save
-        format.html { redirect_to @enrollment, notice: 'Enrollment was successfully created.' }
+        format.html { redirect_to @enrollment.user, notice: 'Enrollment was successfully created.' }
         format.json { render :show, status: :created, location: @enrollment }
       else
         format.html { render :new }

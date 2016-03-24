@@ -5,10 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
-      <th>Code<th>
-      <th>Name<th>
-      <th>Requirement<th>
+      <th>Code</th>
+      <th>Name</th>
     </tr>
   </thead>
 
@@ -18,9 +16,13 @@
         <tr>
           <td><%= result.code %></td>
           <td><%= result.name%></td>
-          <td><%= result.requirement %></td>
+          <td><%= button_to 'Enroll', enrollments_path(course_id: result) %></td>
         </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
+
+<br>
+<br>
+<%= link_to 'Back', searches_path %>
