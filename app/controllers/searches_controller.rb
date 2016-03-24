@@ -15,27 +15,18 @@ class SearchesController < ApplicationController
       @results = @courses.search(params[:search]).order("created_at DESC")
     end
 
-    if params[:selected_subject]
-      # puts "++++++++++++++++++++++++++++++++++"
-      # puts params[:selected_subject]
+    if params[:selected_subject] && params[:selected_subject] != ""
       @selected_subject_id = Subject.find(params[:selected_subject]).sub_id
-      puts "++++++++++++++++"
-      # puts @selected_subject_id
-      puts @results.size
       @collection = Array.new
       @results.each do |result|
-        array = JSON.parse(result["subjects"])
+        array = eval(result["subjects"])
         array.each do |pair|
           if pair["id"] == @selected_subject_id
-            @collection << @result
+            @collection << result
           end
         end
       end
-
-      puts "below is result class============"
-      # puts @results.class
-      puts @results.size
-      puts "below is result class============"
+      @results = @collection
     end
   end
 

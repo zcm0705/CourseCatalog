@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # resources :searches
 
   get 'searches/results', to: 'searches#show', as: 'search_show'
-  
+
   get 'searches', to: 'searches#index'
 
   get 'admin' => 'admin#index'
@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   resources :courses
   resources :subjects
   resources :users
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

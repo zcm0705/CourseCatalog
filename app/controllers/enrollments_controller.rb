@@ -29,13 +29,12 @@ class EnrollmentsController < ApplicationController
   def create
     course = Course.find(params[:course_id])
     @enrollment = @user.enrollments.build(course: course)
-
     respond_to do |format|
       if @enrollment.save
         format.html { redirect_to @enrollment.user, notice: 'Enrollment was successfully created.' }
         format.json { render :show, status: :created, location: @enrollment }
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'You have enrolled in this class.'}
         format.json { render json: @enrollment.errors, status: :unprocessable_entity }
       end
     end
