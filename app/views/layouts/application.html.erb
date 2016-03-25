@@ -10,7 +10,11 @@
 
 <div class="container">
   <ul class="nav nav-tabs">
-    <li><%= link_to "Home", users_path %><li>
+    <% if session[:user_id].nil? %>
+      <li><%= link_to "Home", users_path %><li>
+    <% else %>
+      <li><%= link_to "Home", user_path(session[:user_id]) %><li>
+    <% end %>
     <li><%= link_to "Course", courses_path %><li>
     <li><%= link_to "Subject", subjects_path %><li>
     <li><%= link_to "Instructor", instructors_path %><li>
