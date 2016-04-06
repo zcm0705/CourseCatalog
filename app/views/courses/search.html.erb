@@ -1,6 +1,6 @@
 <div class="col-md-offset-1 col-md-4">
   <h1>Search</h1>
-    <%= form_tag(do_search_courses_path, method: "get", remote: true, role: "form", class: "form") do %>
+    <%= form_tag(do_search_courses_path, method: "get", remote: true, role: "form", class: "form", id: "search") do %>
 
       <div class="form-group">
         <label>Subject:</label>
@@ -12,7 +12,6 @@
         <%= text_field_tag(:cour, "", class: "form-control") %>
       </div>
 
-      <%= submit_tag("Search", class: "btn btn-default" ) %>
     <% end %>
 </div>
 <div class="row col-md-offset-1 col-md-11">
