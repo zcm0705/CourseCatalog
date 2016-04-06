@@ -4,7 +4,7 @@
 
       <div class="form-group">
         <label>Subject:</label>
-        <%= select_tag(:subject, options_for_select(@subjects), class: "form-control") %>
+        <%= select_tag(:subject, content_tag(:option,'All Subjects...',:value=>"")+options_from_collection_for_select(Subject.all, :id, :get_subject_name, :prompt => true), class: "form-control") %>
       </div>
 
       <div class="form-group">

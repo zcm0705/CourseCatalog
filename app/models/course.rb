@@ -5,9 +5,6 @@ class Course < ActiveRecord::Base
 
   before_destroy :ensure_not_referenced_by_any_enrollment
 
-
-
-
   private
     # ensure that there are no enrollment referencing this course
     def ensure_not_referenced_by_any_enrollment
