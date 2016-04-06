@@ -29,7 +29,14 @@ Rails.application.routes.draw do
 
   resources :instructors
 
-  resources :courses
+  # resources :courses
+  resources :courses do
+    collection do
+      get 'search'
+      get 'do_search'
+    end
+  end
+  
   resources :subjects
   resources :users
 

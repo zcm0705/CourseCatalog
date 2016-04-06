@@ -1,0 +1,8 @@
+<h3>Search Results</h3>
+
+<%if @courses.nil? || @courses.length == 0%>
+	<p>No Matches Found</p>
+<% else %>
+	<p><%= @courses.length %> matches found</p>
+	<%= render "index" %>
+<% end %>

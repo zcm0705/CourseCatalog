@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Course Name</th>
+      <th>Subject Code</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.code %></td>
+        <td><%= link_to 'Show', c %></td>
+        <td><%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

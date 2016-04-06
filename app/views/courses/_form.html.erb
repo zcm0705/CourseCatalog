@@ -11,7 +11,19 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <%= field_h("Course Name", :name, f) %>
+  <%= field_h("Course Code", :code, f) %>
+  <%= field_h("Desription", :description, f) %>
+
+  <!-- Title: <%= f.text_field :title %>
+  Description <%= f.text_field :description %>
+  Owner: <%= f.text_field :owner %> -->
+
+  <!-- Category: <%= f.text_field :category_id %>
+
+  <%= f.submit %> -->
+
+  <!-- <div class="actions">
     <%= f.submit %>
-  </div>
+  </div> -->
 <% end %>
